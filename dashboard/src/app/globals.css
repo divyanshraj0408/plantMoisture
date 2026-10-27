@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --bg: #f4f4f1;
+  --surface: #fcfcfb;
+  --border: #e2e1dc;
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --muted: #7d7c77;
+  --grid: #ebeae6;
+  --series-1: #2a78d6; /* moisture */
+  --series-2: #eb6834; /* moving average */
+  --series-3: #6250d6; /* trend line */
+  --good: #008300;
+  --warning: #b07800;
+  --critical: #d03b3a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111110;
+    --surface: #1a1a19;
+    --border: #2e2e2c;
+    --text: #f0efec;
+    --text-2: #c3c2b7;
+    --muted: #8f8e86;
+    --grid: #262624;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #9085e9;
+    --good: #3fa63f;
+    --warning: #c98500;
+    --critical: #e66767;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--text);
+  color: var(--surface);
+  border-color: var(--text);
+}
